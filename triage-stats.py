@@ -25,10 +25,10 @@ sys.stderr.write('Retrieving project...\n')
 
 proj = launchpad.projects[projectname]
 
-sys.stderr.write('Considering bugs changed in the last two weeks...\n')
+sys.stderr.write('Considering bugs changed in the last 30 days...\n')
 now = datetime.datetime.now()
 since = datetime.datetime(now.year, now.month, now.day)
-since -= datetime.timedelta(days=14)
+since -= datetime.timedelta(days=30)
 
 triagers = {}
 
